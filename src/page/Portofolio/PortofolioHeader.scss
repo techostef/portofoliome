@@ -1,0 +1,17 @@
+@import '../../AppConfig.scss';
+
+.protofolio-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #989898;
+    border-bottom: 3px solid rgba(0 , 0 , 0 , 0.6);
+    .item-header {
+        color: white;
+        padding: 10px 15px;
+        cursor: pointer;
+        &.active {
+            color: $primary;
+        }
+    }
+}

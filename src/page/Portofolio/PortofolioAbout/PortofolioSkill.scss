@@ -1,0 +1,32 @@
+.skill-container {
+    display: flex;
+    width: 100%;
+    padding: 0 100px;
+    padding-top: 80px;
+    justify-content: center;
+    .who-am-i {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .pic {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        .title {
+            font-weight: 800;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        .desc {
+            text-align: center;
+            font-size: 14px;
+        }
+    }
+    .skill-content {
+        width: 50%;
+    }
+}

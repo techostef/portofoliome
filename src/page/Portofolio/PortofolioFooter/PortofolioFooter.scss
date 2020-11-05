@@ -1,0 +1,14 @@
+.portofolio-footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #030a1f;
+    padding-bottom: 50px;
+
+    .title-content {
+        color: white;
+        .title-underline {
+            border-color: white;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@import '../../AppConfig.scss';
+
+.portofolio-me {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    .hello {
+        font-size: 40px;
+        color: white;
+    }
+    .title {
+        width: 100%;
+        font-size: 52px;
+        font-weight: 600;
+        color: $primary;
+        text-align: center;
+    }
+    .about {
+        width: 100%;
+        font-size: 24px;
+        text-align: center;
+        color: white;
+    }
+    .btn-about-me {
+        background-color: transparent;
+        color: $primary;
+        border-color: $primary;
+        &:hover {
+            background-color: $primary;
+            color: white;
+            border-color: $primary;
+        }
+    }
+}

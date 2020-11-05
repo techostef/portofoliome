@@ -1,0 +1,15 @@
+@import '../../../AppConfig.scss';
+
+.portofolio-about {
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f3;
+    color: black;
+    padding-bottom: 120px;
+    .frid-container {
+        width: 100%;
+        padding-top: 40px;
+        display: flex;
+        justify-content: center;
+    }
+}

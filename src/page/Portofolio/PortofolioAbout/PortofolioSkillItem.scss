@@ -1,0 +1,41 @@
+@import "../../../AppConfig.scss";
+
+.portofolio-skill-item {
+    display: flex;
+    /* width: fit-content; */
+    align-content: center;
+    border: 1px solid $primary;
+    background-color: white;
+    margin-bottom: 10px;
+    .item-label {
+        background-color: $primary;
+        padding: 10px;
+        width: 180px;
+    }
+    .item-star {
+        display: flex;
+        align-content: center;
+        background-color: white;
+        padding: 0 10px;
+        svg {
+            margin: auto 0;
+            fill: $primary;
+            
+            path {
+                fill: $primary;
+            }
+            &.active {
+                fill: gold;
+                path {
+                    fill: gold;
+                }
+            }
+        }
+    }
+    .item-nilai {
+        color: $primary;
+        line-height: 43px;
+        margin-left: auto;
+        margin-right: 28px;
+    }
+}
