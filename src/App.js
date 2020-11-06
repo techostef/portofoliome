@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import Portofolio from './page/Portofolio/Portofolio';
 import "./App.scss"
 
-class App extends Component {
-    render() {
-        return ( 
-            <Portofolio/>
-        );
-    }
+const App = () => {
+    
+    return ( 
+        <Portofolio/>
+    );
 }
-export default App;
+export default React.memo(App);

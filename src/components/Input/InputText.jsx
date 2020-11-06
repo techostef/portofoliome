@@ -9,7 +9,7 @@ const InputText = (props) => {
                 {props.label}
             </div>
             <div className="input-content">
-                <input placeholder={props.placeholder}></input>
+                <input placeholder={props.placeholder} onChange={(e) => props.onChange(e.target.value)}></input>
             </div>
         </div>
     )
@@ -18,6 +18,7 @@ const InputText = (props) => {
 InputText.propTypes = {
     label: PropTypes.string,
     placeholder: PropTypes.string,
+    onChange: PropTypes.func,
 }
 
 export default React.memo(InputText)

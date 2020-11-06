@@ -2,8 +2,13 @@ import React from 'react'
 import './PortofolioMe.scss'
 import { ReactComponent as AvatarIcon} from '../../images/Avatar.svg'
 import { Button } from "react-bootstrap"
+import { scrollAnimation } from '../../helpers/scrollHelpers'
 
 const PortolioMe = (props) => {
+    const scrollTo = () => {
+        if (props.containerRef && props.containerRef.current)
+            scrollAnimation(props.containerRef, 800)
+    }
     return (
         <div className="portofolio-me">
             <div className="hello">
@@ -19,7 +24,7 @@ const PortolioMe = (props) => {
                 <AvatarIcon/>
             </div>
             <div className="mt-8">
-                <Button className="btn-about-me">
+                <Button className="btn-about-me" onClick={scrollTo}>
                     About Me
                 </Button>
             </div>

@@ -10,6 +10,7 @@ const Portofolio = () => {
     const canvasRef = useRef(null)
     const maxWidth = window.innerWidth
     const maxHeight = window.innerHeight
+    const myRef = useRef(null)
 
     const getColorCircle = () => {
         const colors = ['#1700ff', '#00a8ff', '#00ff07', '#c2ff00', '#ff6600', '#ff1900', '#ff00e9', '#ff004e', '#00feff']
@@ -40,8 +41,8 @@ const Portofolio = () => {
 
         ctx.beginPath();
         ctx.arc(endPositionX, endPositionY, 1, 0, 2 * Math.PI);
-        ctx.strokeStyle = radgrad;
-        ctx.fillStyle = radgrad;
+        ctx.strokeStyle = "white";
+        ctx.fillStyle = "white";
         ctx.fill();
         // ctx.stroke();
         ctx.closePath();
@@ -140,6 +141,27 @@ const Portofolio = () => {
         return (Math.floor(Math.random() * 280) + 20)
     }
 
+    const getRandomStar = (max) => {
+        let result = []
+        while(max > 0) {
+            const startPositionX = (Math.floor(Math.random() * maxWidth) )
+            const startPositionY = (Math.floor(Math.random() * maxHeight) )
+            const endPositionX = startPositionX
+            const endPositionY = startPositionY
+            const colorCircle = getColorCircle()
+       
+            result.push({
+                startPositionX,
+                startPositionY,
+                endPositionX,
+                endPositionY,
+                colorCircle,
+            })
+            max--
+        }
+        return result
+    }
+
     useEffect(() => {
         
         const canvas = canvasRef.current
@@ -199,6 +221,8 @@ const Portofolio = () => {
             max--
         }
 
+        let starItems = getRandomStar(200)
+
         spaceItems.forEach((item) => {
             drawSpaceItem(ctx, item.startPositionX, item.startPositionY, item.endPositionX, item.endPositionY, item.starLightNum, item.colorCircle)
         })
@@ -206,6 +230,10 @@ const Portofolio = () => {
         // if (spaceItems.length > 0)
         setInterval(() => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            starItems.forEach((item) => {
+                createHeaderMeteor(ctx, item.startPositionX, item.startPositionY, item.endPositionX, item.endPositionY, null, item.colorCircle)
+            })
+            
             spaceItems.forEach((item) => {
                 drawSpaceItem(ctx, item.startPositionX, item.startPositionY, item.endPositionX, item.endPositionY, item.starLightNum, item.colorCircle)
                
@@ -232,10 +260,10 @@ const Portofolio = () => {
     }, [])
 
     return (
-        <div className="container-portofolio">
+        <div className="container-portofolio" ref={myRef}>
             <canvas className="canvas" ref={canvasRef}/>
-            <PortofolioMe/>
-            <PortofolioHeader/>
+            <PortofolioMe containerRef={myRef}/>
+            <PortofolioHeader containerRef={myRef}/>
             <PortofolioAbout/>
             <PortofolioFooter/>
         </div>

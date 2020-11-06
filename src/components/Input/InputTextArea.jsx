@@ -9,7 +9,7 @@ const InputTextArea = (props) => {
                 {props.label}
             </div>
             <div className="input-content">
-                <textarea placeholder={props.placeholder}></textarea>
+                <textarea placeholder={props.placeholder} onChange={(e) => props.onChange(e.target.value)}></textarea>
             </div>
         </div>
     )
@@ -18,6 +18,7 @@ const InputTextArea = (props) => {
 InputTextArea.propTypes = {
     label: PropTypes.string,
     placeholder: PropTypes.string,
+    onChange: PropTypes.func,
 }
 
 export default React.memo(InputTextArea)
