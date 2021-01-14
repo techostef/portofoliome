@@ -1,4 +1,4 @@
 # reactjs-webpack
 
 INSTALL
-npm install
+npm install, demo https://techostef.github.io/portofoliome/
